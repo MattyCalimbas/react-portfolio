@@ -1,7 +1,7 @@
 import { OrbitControls } from "@react-three/drei";
-import { Avatar } from './Avatar';
+import  Avatar  from './Avatar';
 
-export const Experience = () => {
+export default function Experience () {
   return (
     <>
       <OrbitControls />
@@ -12,3 +12,5 @@ export const Experience = () => {
     </>
   );
 };
+
+
