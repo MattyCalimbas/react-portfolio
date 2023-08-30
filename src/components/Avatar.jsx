@@ -4,9 +4,16 @@ Command: npx gltfjsx@6.2.11 64ece95e4a8548d9bc0ff8cf.glb
 */
 
 import React, { useEffect, useRef, } from 'react';
+import * as THREE from 'three';
+import { useFrame  } from '@react-three/fiber';
+import { useControls } from 'leva';
 import { useFBX, useGLTF, useAnimations } from '@react-three/drei';
 
 export default function Avatar(props) {
+  const { headFollow, cursorFollow } = useControls({
+    headFollow: false,
+    cursorFollow:false,
+  })
   const group = useRef()
   const { nodes, materials } = useGLTF('/models/64ece95e4a8548d9bc0ff8cf.glb');
 
@@ -14,11 +21,21 @@ export default function Avatar(props) {
   const { animations: typingAnimation } = useFBX('animations/Typing.fbx');
 
   console.log(typingAnimation)
-  typingAnimation[0].name="Typing";
+  typingAnimation[0].name = "Typing";
 
   const { actions } = useAnimations(typingAnimation, group);
-   
-  useEffect(()=>{
+
+  useFrame((state) => {
+    if (headFollow) {
+      group.current.getObjectByName("Head").lookAt(state.camera.position)
+    }
+    if (cursorFollow){
+      const target = new THREE.Vector3(state.mouse.x, state.mouse.y, 1);
+      group.current.getObjectByName("Spine2").lookAt(target)
+    }
+  })
+
+  useEffect(() => {
     actions["Typing"].reset().play();
   }, []);
 
