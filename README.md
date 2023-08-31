@@ -54,7 +54,7 @@ yarn install
 4. Start the development server:
 
 ```bash
-yarn start
+yarn dev
 ```
 
 ## Contributing
