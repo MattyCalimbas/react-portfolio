@@ -10,20 +10,27 @@ import { useControls } from 'leva';
 import { useFBX, useGLTF, useAnimations } from '@react-three/drei';
 
 export default function Avatar(props) {
-  const { headFollow, cursorFollow } = useControls({
+  const { animation } = props;
+  const { headFollow, cursorFollow, wireframe } = useControls({
     headFollow: false,
     cursorFollow:false,
+    wireframe: false
   })
   const group = useRef()
   const { nodes, materials } = useGLTF('/models/64ece95e4a8548d9bc0ff8cf.glb');
 
   // destructuring: useFBX is returning and object with a property called animations.  We are then extracting the property and renaming it to a new variable name 'typingAnimation'
   const { animations: typingAnimation } = useFBX('animations/Typing.fbx');
+  const { animations: standingAnimation } = useFBX('animations/Standing Idle.fbx');
+  const { animations: fallingAnimation } = useFBX('animations/Falling Idle.fbx');
+  
 
   console.log(typingAnimation)
   typingAnimation[0].name = "Typing";
+  standingAnimation[0].name = "Standing";
+  fallingAnimation[0].name = "Falling";
 
-  const { actions } = useAnimations(typingAnimation, group);
+  const { actions } = useAnimations([typingAnimation[0], standingAnimation[0], fallingAnimation[0]], group);
 
   useFrame((state) => {
     if (headFollow) {
@@ -36,8 +43,18 @@ export default function Avatar(props) {
   })
 
   useEffect(() => {
-    actions["Typing"].reset().play();
-  }, []);
+    actions[animation].reset().fadeIn(0.5).play();
+    return () => {
+      actions[animation].reset().fadeOut(0.5);
+    }
+  }, [animation]);
+
+  useEffect(() =>{
+    // materials is not an array but an object: Object.values is used to iterate over materials
+    Object.values(materials).forEach((material) => {
+      material.wireframe = wireframe
+    })
+  },[wireframe])
 
   return (
     <group {...props} ref={group} dispose={null}>
