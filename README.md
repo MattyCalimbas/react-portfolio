@@ -61,6 +61,18 @@ yarn dev
 
 Contributions are welcome! If you find bugs or want to improve the project, feel free to open issues or pull requests. Please follow the existing coding style and guidelines.
 
+Shelf by Nick Slough [CC-BY] via Poly Pizza
+Coffee plant by Poly by Google [CC-BY] via Poly Pizza
+Gaming Computer by Alex Safayan [CC-BY] via Poly Pizza
+Monitor by Poly by Google [CC-BY] via Poly Pizza
+Luke's Lightsaber by Beren Kusmenoglu [CC-BY] via Poly Pizza
+Keyboard by Poly by Google [CC-BY] via Poly Pizza
+Computer mouse by Poly by Google [CC-BY] via Poly Pizza
+Executive Chair by Zsky [CC-BY] via Poly Pizza
+Adjustable Desk by jeff cobesign [CC-BY] via Poly Pizza
+Modern rug by Poly by Google [CC-BY] via Poly Pizza
+
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
