@@ -1,6 +1,7 @@
 import { OrbitControls, Sky, Environment, ContactShadows } from "@react-three/drei";
 import Avatar from './Avatar';
 import { useControls } from "leva";
+import Office from './Office'
 
 export default function Experience() {
 
@@ -35,6 +36,7 @@ export default function Experience() {
           <meshStandardMaterial color='white' />
         </mesh>
       </group>
+      {/* <Office /> */}
     </>
   );
 };

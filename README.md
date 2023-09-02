@@ -67,7 +67,7 @@ Gaming Computer by Alex Safayan [CC-BY] via Poly Pizza
 Monitor by Poly by Google [CC-BY] via Poly Pizza
 Luke's Lightsaber by Beren Kusmenoglu [CC-BY] via Poly Pizza
 Keyboard by Poly by Google [CC-BY] via Poly Pizza
-Computer mouse by Poly by Google [CC-BY] via Poly Pizza
+Computer Mouse by CreativeTrio via Poly Pizza
 Executive Chair by Zsky [CC-BY] via Poly Pizza
 Adjustable Desk by jeff cobesign [CC-BY] via Poly Pizza
 Modern rug by Poly by Google [CC-BY] via Poly Pizza
