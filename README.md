@@ -64,13 +64,13 @@ Contributions are welcome! If you find bugs or want to improve the project, feel
 - Shelf by Nick Slough [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/Wtd7rX7DGl)
 - Lamp by burunduk [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/OQ2HurCvOz)
 - Gaming Computer by Alex Safayan [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/5cN7W4ufoII)
-- Monitor by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/e8cELDeDuTr)
+- Monitor by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/e8cELDeDuTr)
 - Luke's Lightsaber by Beren Kusmenoglu [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/36AnCHRQmia)
-- Keyboard by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/3oFfQCSsUmQ)
-- Computer Mouse by [CreativeTrio](https://poly.pizza/m/V2Ebx3pvo4)
-- Executive Chair by Zsky [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/hW11P9DDXa)
-- Adjustable Desk by jeff cobesign [CC-BY] via [Poly Pizza](https://poly.pizza/m/7Z0bva7ec1s)
-- Modern rug by Poly by Google [CC-BY] via [Poly Pizza](https://poly.pizza/m/6acMdZwnCkQ)
+- Keyboard by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/3oFfQCSsUmQ)
+- Computer Mouse by CreativeTrio [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/V2Ebx3pvo4)
+- Executive Chair by Zsky [CC-BY](https://creativecommons.org/licenses/by/3.0/) (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/hW11P9DDXa)
+- Adjustable Desk by jeff cobesign [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/7Z0bva7ec1s)
+- Modern rug by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/6acMdZwnCkQ)
 
 
 ## License
