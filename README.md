@@ -61,16 +61,16 @@ yarn dev
 
 Contributions are welcome! If you find bugs or want to improve the project, feel free to open issues or pull requests. Please follow the existing coding style and guidelines.
 
-Shelf by Nick Slough [CC-BY] via Poly Pizza
-Coffee plant by Poly by Google [CC-BY] via Poly Pizza
-Gaming Computer by Alex Safayan [CC-BY] via Poly Pizza
-Monitor by Poly by Google [CC-BY] via Poly Pizza
-Luke's Lightsaber by Beren Kusmenoglu [CC-BY] via Poly Pizza
-Keyboard by Poly by Google [CC-BY] via Poly Pizza
-Computer Mouse by CreativeTrio via Poly Pizza
-Executive Chair by Zsky [CC-BY] via Poly Pizza
-Adjustable Desk by jeff cobesign [CC-BY] via Poly Pizza
-Modern rug by Poly by Google [CC-BY] via Poly Pizza
+- Shelf by Nick Slough [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/Wtd7rX7DGl)
+- Lamp by burunduk [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/OQ2HurCvOz)
+- Gaming Computer by Alex Safayan [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/5cN7W4ufoII)
+- Monitor by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/e8cELDeDuTr)
+- Luke's Lightsaber by Beren Kusmenoglu [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/36AnCHRQmia)
+- Keyboard by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/3oFfQCSsUmQ)
+- Computer Mouse by [CreativeTrio](https://poly.pizza/m/V2Ebx3pvo4)
+- Executive Chair by Zsky [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/hW11P9DDXa)
+- Adjustable Desk by jeff cobesign [CC-BY] via [Poly Pizza](https://poly.pizza/m/7Z0bva7ec1s)
+- Modern rug by Poly by Google [CC-BY] via [Poly Pizza](https://poly.pizza/m/6acMdZwnCkQ)
 
 
 ## License
