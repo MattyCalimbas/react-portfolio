@@ -68,7 +68,7 @@ Contributions are welcome! If you find bugs or want to improve the project, feel
 - Luke's Lightsaber by Beren Kusmenoglu [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/36AnCHRQmia)
 - Keyboard by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/3oFfQCSsUmQ)
 - Computer Mouse by CreativeTrio [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/V2Ebx3pvo4)
-- Executive Chair by Zsky [CC-BY](https://creativecommons.org/licenses/by/3.0/) (https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/hW11P9DDXa)
+- Executive Chair by Zsky [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/hW11P9DDXa)
 - Adjustable Desk by jeff cobesign [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/7Z0bva7ec1s)
 - Modern rug by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/6acMdZwnCkQ)
 
