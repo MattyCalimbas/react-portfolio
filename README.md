@@ -61,16 +61,18 @@ yarn dev
 
 Contributions are welcome! If you find bugs or want to improve the project, feel free to open issues or pull requests. Please follow the existing coding style and guidelines.
 
-- Shelf by Nick Slough [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/Wtd7rX7DGl)
-- Lamp by burunduk [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/OQ2HurCvOz)
-- Gaming Computer by Alex Safayan [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/5cN7W4ufoII)
-- Monitor by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/e8cELDeDuTr)
-- Luke's Lightsaber by Beren Kusmenoglu [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/36AnCHRQmia)
-- Keyboard by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/3oFfQCSsUmQ)
-- Computer Mouse by CreativeTrio [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/V2Ebx3pvo4)
-- Executive Chair by Zsky [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/hW11P9DDXa)
-- Adjustable Desk by jeff cobesign [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/7Z0bva7ec1s)
-- Modern rug by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/6acMdZwnCkQ)
+### 3D Assets Credits
+- [Plant - White Pot](https://poly.pizza/m/7ig0HcyfT93) by [Jakers_H](https://poly.pizza/u/Jakers_H) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
+- [Palm tree](https://poly.pizza/m/bjGeBbKhAVN) by [jeremy](https://poly.pizza/u/jeremy) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
+- [Houseplant](https://poly.pizza/m/bfLOqIV5uP) by[Quaternius](https://poly.pizza/u/Quaternius)
+- [Chair](https://poly.pizza/m/bOuqwqoXiy2) by [CMHT Oculus](https://poly.pizza/u/CMHT%20Oculus) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
+- [Adjustable Desk](https://poly.pizza/m/7Z0bva7ec1s) by [jeff cobesign](https://poly.pizza/u/jeff%20cobesign) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
+- [Monitor](https://poly.pizza/m/5qZ5IaClHHw) by [Poly by Google](https://poly.pizza/u/Poly%20by%20Google) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
+- [Keyboard](https://poly.pizza/m/fOy2zvPJAj-) by [Alex Safayan](https://poly.pizza/u/Alex%20Safayan) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
+- [Mouse](https://poly.pizza/m/9Nw9BpWzqAx) by [Poly by Google](https://poly.pizza/u/Poly%20by%20Google) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
+- [Shelf](https://poly.pizza/m/39ZKZj3mtvO) by [Poly by Google](https://poly.pizza/u/Poly%20by%20Google) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
+- [Lava lamp](https://poly.pizza/m/7hgc-RhOFEA) by [Poly by Google](https://poly.pizza/u/Poly%20by%20Google) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
+- [Low Poly Charmander](https://poly.pizza/m/d6Ar6_NHbgS) by [Tipatat Chennavasin](https://poly.pizza/u/Tipatat%20Chennavasin) [[CC-BY](https://creativecommons.org/licenses/by/3.0/)] via Poly Pizza
 
 
 ## License

@@ -36,7 +36,7 @@ export default function Experience() {
           <meshStandardMaterial color='white' />
         </mesh>
       </group>
-      {/* <Office /> */}
+      <Office />
     </>
   );
 };
