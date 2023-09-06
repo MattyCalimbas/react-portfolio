@@ -7,6 +7,7 @@ function App() {
       <color attach="background" args={["#ececec"]} />
       <Experience />
     </Canvas>
+
   );
 }
 
