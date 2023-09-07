@@ -24,7 +24,7 @@ export default function Experience() {
 
   return (
     <>
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       <Sky />
       <Environment preset='sunset' />
       <group position-y={-1}>
@@ -36,7 +36,7 @@ export default function Experience() {
           <meshStandardMaterial color='white' />
         </mesh>
       </group>
-      <Office />
+      {/* <Office /> */}
     </>
   );
 };
