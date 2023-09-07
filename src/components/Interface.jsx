@@ -8,21 +8,6 @@ function Section(props) {
     )
 }
 
-export default function Interface() {
-    return (
-        <div className='flex flex-col items-center w-screen'>
-            <AboutSection />
-            <SkillSection />
-            <Section>
-                <h1>Projects</h1>
-            </Section>
-            <Section>
-                <h1>Contact</h1>
-            </Section>
-        </div>
-    )
-}
-
 function AboutSection() {
     return (
         <Section>
@@ -98,3 +83,20 @@ function SkillSection() {
         </Section>
     )
 }
+
+export default function Interface() {
+    return (
+        <div className='flex flex-col items-center w-screen'>
+            <AboutSection />
+            <SkillSection />
+            <Section>
+                <h1>Projects</h1>
+            </Section>
+            <Section>
+                <h1>Contact</h1>
+            </Section>
+        </div>
+    )
+}
+
+
