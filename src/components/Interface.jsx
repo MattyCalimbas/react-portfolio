@@ -53,7 +53,7 @@ function Section(props) {
                 y: 0,
                 transition: {
                     duration: 1,
-                    delay:0.6
+                    delay: 0.6
                 }
             }}>
             {children}
@@ -68,14 +68,38 @@ function AboutSection() {
                 Hello, I'm
                 <br />
                 <span className="bg-white px-1 italic">Matthew Calimbas</span>
-                <p className="text-lg text-gray-600 mt-4">
+                <motion.p className="text-lg text-gray-600 mt-4"
+                    initial={{
+                        opacity: 0,
+                        y: 25,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 1,
+                        delay: 1.5
+                    }}>
                     Web Developer
                     <br />
                     ...I make web applications!
-                </p>
-                <button className="bg-cyan-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16">
+                </motion.p>
+                <motion.button className="bg-cyan-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16"
+                    initial={{
+                        opacity: 0,
+                        y: 25,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 1,
+                        delay: 2.5
+                    }}>
                     Contact me
-                </button>
+                </motion.button>
             </h1>
         </Section>
     )
@@ -85,32 +109,96 @@ function AboutSection() {
 function SkillSection() {
     return (
         <Section>
-            <div>
+            <motion.div whileInView={"visible"}>
                 <h2 className="text-5xl font-bold">Skills</h2>
-                <div className="mt-8 space-y-4">
+                <div className=" mt-8 space-y-4">
                     {skills.map((skill, index) => (
                         <div className="w-64" key={index}>
-                            <h3 className="text-xl fond-bold text-gray-800">{skill.title}</h3>
+                            <motion.h3
+                                className="text-xl font-bold text-gray-800"
+                                initial={{
+                                    opacity: 0,
+                                }}
+                                variants={{
+                                    visible: {
+                                        opacity: 1,
+                                        transition: {
+                                            duration: 1,
+                                            delay: 1 + index * 0.2,
+                                        },
+                                    },
+                                }}
+                            >
+                                {skill.title}
+                            </motion.h3>
                             <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
-                                <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${skill.level}` }}></div>
+                                <motion.div
+                                    className="h-full bg-indigo-500 rounded-full "
+                                    style={{ width: `${skill.level}%` }}
+                                    initial={{
+                                        scaleX: 0,
+                                        originX: 0,
+                                    }}
+                                    variants={{
+                                        visible: {
+                                            scaleX: 1,
+                                            transition: {
+                                                duration: 1,
+                                                delay: 1 + index * 0.2,
+                                            },
+                                        },
+                                    }}
+                                />
                             </div>
                         </div>
                     ))}
                 </div>
-            </div>
-            <div>
-                <h2 className="text-5xl font-bold mt-10">Languages</h2>
-                <div className="mt-8 space-y-4">
-                    {languages.map((lang, index) => (
-                        <div className="w-64" key={index}>
-                            <h3 className="text-xl fond-bold text-gray-800">{lang.title}</h3>
-                            <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
-                                <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${lang.level}` }}></div>
+                <div>
+                    <h2 className="text-5xl font-bold mt-10">Languages</h2>
+                    <div className=" mt-8 space-y-4">
+                        {languages.map((lng, index) => (
+                            <div className="w-64" key={index}>
+                                <motion.h3
+                                    className="text-xl font-bold text-gray-800"
+                                    initial={{
+                                        opacity: 0,
+                                    }}
+                                    variants={{
+                                        visible: {
+                                            opacity: 1,
+                                            transition: {
+                                                duration: 1,
+                                                delay: 2 + index * 0.2,
+                                            },
+                                        },
+                                    }}
+                                >
+                                    {lng.title}
+                                </motion.h3>
+                                <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
+                                    <motion.div
+                                        className="h-full bg-indigo-500 rounded-full "
+                                        style={{ width: `${lng.level}%` }}
+                                        initial={{
+                                            scaleX: 0,
+                                            originX: 0,
+                                        }}
+                                        variants={{
+                                            visible: {
+                                                scaleX: 1,
+                                                transition: {
+                                                    duration: 1,
+                                                    delay: 2 + index * 0.2,
+                                                },
+                                            },
+                                        }}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </motion.div>
         </Section>
     )
 }
