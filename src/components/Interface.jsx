@@ -1,32 +1,4 @@
-function Section(props) {
-    const { children } = props;
-
-    return (
-        <section className={`h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}>
-            {children}
-        </section>
-    )
-}
-
-function AboutSection() {
-    return (
-        <Section>
-            <h1 className="text-6xl font-extrabold leading-snug">
-                Hello, I'm
-                <br />
-                <span className="bg-white px-1 italic">Matthew Calimbas</span>
-                <p className="text-lg text-gray-600 mt-4">
-                    Web Developer
-                    <br />
-                    ...I make web applications!
-                </p>
-                <button className="bg-cyan-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16">
-                    Contact me
-                </button>
-            </h1>
-        </Section>
-    )
-}
+import { motion } from "framer-motion";
 
 const skills = [
     {
@@ -63,6 +35,52 @@ const languages = [
 
 
 ]
+
+function Section(props) {
+    const { children } = props;
+
+    return (
+        <motion.section
+            className={
+                `h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`
+            }
+            initial={{
+                opacity: 0,
+                y: 50
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                    duration: 1,
+                    delay:0.6
+                }
+            }}>
+            {children}
+        </motion.section>
+    )
+}
+
+function AboutSection() {
+    return (
+        <Section>
+            <h1 className="text-6xl font-extrabold leading-snug">
+                Hello, I'm
+                <br />
+                <span className="bg-white px-1 italic">Matthew Calimbas</span>
+                <p className="text-lg text-gray-600 mt-4">
+                    Web Developer
+                    <br />
+                    ...I make web applications!
+                </p>
+                <button className="bg-cyan-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16">
+                    Contact me
+                </button>
+            </h1>
+        </Section>
+    )
+}
+
 
 function SkillSection() {
     return (
@@ -110,7 +128,7 @@ function ContactSection() {
                         type="text"
                         name="name"
                         id="name"
-                        className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+                        className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-900 p-3"
                     />
                     <label
                         for="email"
@@ -122,7 +140,7 @@ function ContactSection() {
                         type="email"
                         name="email"
                         id="email"
-                        className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+                        className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-900 p-3"
                     />
                     <label
                         for="email"
@@ -133,9 +151,9 @@ function ContactSection() {
                     <textarea
                         name="message"
                         id="message"
-                        className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+                        className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-900 p-3"
                     />
-                    <button className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
+                    <button className="bg-cyan-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
                         Submit
                     </button>
                 </form>
