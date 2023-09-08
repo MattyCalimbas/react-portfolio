@@ -80,6 +80,27 @@ function SkillSection() {
                     ))}
                 </div>
             </div>
+            <div>
+                <h2 className="text-5xl font-bold mt-10">Languages</h2>
+                <div className="mt-8 space-y-4">
+                    {languages.map((lang, index) => (
+                        <div className="w-64" key={index}>
+                            <h3 className="text-xl fond-bold text-gray-800">{lang.title}</h3>
+                            <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
+                                <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${lang.level}` }}></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </Section>
+    )
+}
+
+function ContactSection() {
+    return (
+        <Section>
+            <h1>Contact</h1>
         </Section>
     )
 }
@@ -92,9 +113,7 @@ export default function Interface() {
             <Section>
                 <h1>Projects</h1>
             </Section>
-            <Section>
-                <h1>Contact</h1>
-            </Section>
+            <ContactSection />
         </div>
     )
 }
