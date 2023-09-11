@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Canvas } from "@react-three/fiber";
 import Experience from "./components/Experience";
 import { ScrollControls, Scroll } from "@react-three/drei";
@@ -17,11 +17,11 @@ function App() {
 
   return (
     <>
-      <Canvas shadows camera={{ position: [0, 2, 5], fov: 30 }}>
-        <color attach="background" args={["#ececec"]} />
+      <Canvas shadows camera={{ position: [0, 3, 10], fov: 42 }}>
+        <color attach="background" args={["#e6e7ff"]} />
         <ScrollControls pages={4} damping={0.1}>
           <ScrollManager section={section} onSectionChange={setSection} />
-          <Experience />
+          <Experience section={section} />
           <Scroll html>
             <Interface />
           </Scroll>
