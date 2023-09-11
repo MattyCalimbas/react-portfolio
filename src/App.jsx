@@ -9,6 +9,12 @@ function App() {
   const [section, setSection] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
 
+
+  // useEffect rather then onClick so menu closes when scrolling
+  useEffect(()=>{
+    setMenuOpened(false);
+  }, [section])
+
   return (
     <>
       <Canvas shadows camera={{ position: [0, 2, 5], fov: 30 }}>
