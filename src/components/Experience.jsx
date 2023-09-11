@@ -44,7 +44,7 @@ import { motion } from 'framer-motion-3d'
 // };
 
 export default function Experience(props) {
-  const {section} = props;
+  const { section } = props;
   return (
     <>
       <ambientLight intensity={1} />
@@ -55,8 +55,8 @@ export default function Experience(props) {
         animate={{
           y: section === 0 ? 0 : -1,
         }}>
-        </motion.group>
-      <Office />
+        <Office />
+      </motion.group>
     </>
 
   );
