@@ -38,11 +38,11 @@ function Project(props) {
     const background = useRef();
     const bgOpacity = useMotionValue(0.4);
 
-    useEffect(()=>{
+    useEffect(() => {
         animate(bgOpacity, highlighted ? 0.7 : 0.4)
     }, [highlighted]);
 
-    useFrame(()=>{
+    useFrame(() => {
         background.current.material.opacity = bgOpacity.get();
     })
 
@@ -57,25 +57,34 @@ function Project(props) {
                 {project.title.toUpperCase()}
             </Text>
             <Text maxWidth={2} anchorX={"left"} anchorY={"top"} fontSize={0.1} position={[-1, -0.3, 0]}>
-                {project.description}    
+                {project.description}
             </Text>
         </group>
     )
 }
 
-export const currentProjectAtom = atom(Math.floor(projects.length/2));
+export const currentProjectAtom = atom(Math.floor(projects.length / 2));
 
 export default function Projects() {
 
     const { viewport } = useThree()
-    const [currentProject] =  useAtom(currentProjectAtom);
+    const [currentProject] = useAtom(currentProjectAtom);
 
     return (
         <group position-y={-viewport.height * 2 + 1}>
             {
-                projects.map((project, index) =>(
-                    <motion.group key={"project_" + index} position={[index * 2.5, 0, -3]}>
-                        <Project project={project} highlighted={index === currentProject}/>
+                projects.map((project, index) => (
+                    <motion.group
+                        key={"project_" + index}
+                        position={[index * 2.5, 0, -3]}
+                        animate={{
+                            x: 0 + (index - currentProject) * 2.5,
+                            y: currentProject === index ? 0 : -0.1,
+                            z: currentProject === index ? -2 : -3,
+                            rotateX: currentProject === index ? 0 : -Math.PI / 3,
+                            rotateZ: currentProject === index ? 0 : -0.1 * Math.PI,
+                        }}>
+                        <Project project={project} highlighted={index === currentProject} />
                     </motion.group>
                 ))
             }

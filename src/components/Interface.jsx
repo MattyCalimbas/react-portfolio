@@ -113,12 +113,12 @@ function SkillSection() {
     return (
         <Section>
             <motion.div whileInView={"visible"}>
-                <h2 className="text-5xl font-bold">Skills</h2>
+                <h2 className="text-5xl font-bold text-white">Skills</h2>
                 <div className=" mt-8 space-y-4">
                     {skills.map((skill, index) => (
                         <div className="w-64" key={index}>
                             <motion.h3
-                                className="text-xl font-bold text-gray-800"
+                                className="text-xl font-bold text-gray-100"
                                 initial={{
                                     opacity: 0,
                                 }}
@@ -136,7 +136,7 @@ function SkillSection() {
                             </motion.h3>
                             <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                                 <motion.div
-                                    className="h-full bg-indigo-500 rounded-full "
+                                    className="h-full bg-cyan-900 rounded-full "
                                     style={{ width: `${skill.level}%` }}
                                     initial={{
                                         scaleX: 0,
@@ -157,12 +157,12 @@ function SkillSection() {
                     ))}
                 </div>
                 <div>
-                    <h2 className="text-5xl font-bold mt-10">Languages</h2>
+                    <h2 className="text-5xl font-bold text-white mt-10">Languages</h2>
                     <div className=" mt-8 space-y-4">
                         {languages.map((lng, index) => (
                             <div className="w-64" key={index}>
                                 <motion.h3
-                                    className="text-xl font-bold text-gray-800"
+                                    className="text-xl font-bold text-gray-100"
                                     initial={{
                                         opacity: 0,
                                     }}
@@ -180,7 +180,7 @@ function SkillSection() {
                                 </motion.h3>
                                 <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                                     <motion.div
-                                        className="h-full bg-indigo-500 rounded-full "
+                                        className="h-full bg-cyan-900 rounded-full "
                                         style={{ width: `${lng.level}%` }}
                                         initial={{
                                             scaleX: 0,
@@ -255,44 +255,42 @@ function ContactSection() {
 
 function ProjectsSection() {
     const [currentProject, setCurrentProject] = useAtom(currentProjectAtom);
-  
+
     const nextProject = () => {
-      setCurrentProject((currentProject + 1) % projects.length);
+        setCurrentProject((currentProject + 1) % projects.length);
     };
-  
+
     const previousProject = () => {
-      setCurrentProject((currentProject - 1 + projects.length) % projects.length);
+        setCurrentProject((currentProject - 1 + projects.length) % projects.length);
     };
-  
+
     return (
-      <Section>
-        <div className="flex w-full h-full gap-8 items-center justify-center">
-          <button
-            className="hover:text-cyan-900 transition-colors"
-            onClick={previousProject}
-          >
-            ← Previous
-          </button>
-          <h2 className="text-5xl font-bold">Projects</h2>
-          <button
-            className="hover:text-cyan-900 transition-colors"
-            onClick={nextProject}
-          >
-            Next →
-          </button>
-        </div>
-      </Section>
+        <Section>
+            <div className="flex w-full h-full gap-8 items-center justify-center">
+                <button
+                    className="hover:text-cyan-900 transition-colors"
+                    onClick={previousProject}
+                >
+                    ← Previous
+                </button>
+                <h2 className="text-5xl font-bold">Projects</h2>
+                <button
+                    className="hover:text-cyan-900 transition-colors"
+                    onClick={nextProject}
+                >
+                    Next →
+                </button>
+            </div>
+        </Section>
     );
-  };
+};
 
 export default function Interface() {
     return (
         <div className='flex flex-col items-center w-screen'>
             <AboutSection />
             <SkillSection />
-
-                <ProjectsSection />
-
+            <ProjectsSection />
             <ContactSection />
         </div>
     )

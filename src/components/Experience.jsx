@@ -14,6 +14,7 @@ import { Avatar } from "./Avatar";
 import Office from "./Office";
 import Projects from "./Projects"
 import * as THREE from "three";
+import Background from "./Background";
 
 export default function Experience(props) {
   const { menuOpened } = props;
@@ -72,6 +73,7 @@ export default function Experience(props) {
 
   return (
     <>
+    <Background />
       <motion.group position={[1.9072935059634513, 0.216, 2.681801948466054]}
         rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
         animate={"" + section}
