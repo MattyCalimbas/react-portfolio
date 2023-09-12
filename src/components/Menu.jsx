@@ -8,6 +8,7 @@ function MenuButton(props) {
 };
 
 export default function Menu(props) {
+    const url = "https://docs.google.com/document/d/1O0Lgwfq8zjDwoYubYx33pQjZUlGw0dnW/edit?usp=sharing&ouid=109686940535555092380&rtpof=true&sd=true"
     const { onSectionChange, menuOpened, setMenuOpened } = props;
 
     return (
@@ -23,6 +24,8 @@ export default function Menu(props) {
                     <MenuButton label="Skills" onClick={() => onSectionChange(1)} />
                     <MenuButton label="Projects" onClick={() => onSectionChange(2)} />
                     <MenuButton label="Contact" onClick={() => onSectionChange(3)} />
+                    <MenuButton label="Resume" onClick={() => window.location.href = url} />
+
                 </div>
             </div>
         </>

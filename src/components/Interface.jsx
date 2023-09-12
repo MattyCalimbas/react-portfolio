@@ -137,7 +137,7 @@ function SkillSection() {
                             </motion.h3>
                             <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                                 <motion.div
-                                    className="h-full bg-cyan-900 rounded-full "
+                                    className="h-full bg-blue-700 rounded-full "
                                     style={{ width: `${skill.level}%` }}
                                     initial={{
                                         scaleX: 0,
@@ -181,7 +181,7 @@ function SkillSection() {
                                 </motion.h3>
                                 <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                                     <motion.div
-                                        className="h-full bg-cyan-900 rounded-full "
+                                        className="h-full bg-blue-700 rounded-full "
                                         style={{ width: `${lng.level}%` }}
                                         initial={{
                                             scaleX: 0,
