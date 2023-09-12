@@ -55,7 +55,7 @@ export default function Experience(props) {
         animate={{
           y: section === 0 ? 0 : -1,
         }}>
-        <Office />
+        <Office section={section}/>
       </motion.group>
     </>
 
