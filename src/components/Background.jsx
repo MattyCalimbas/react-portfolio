@@ -7,7 +7,7 @@ import * as THREE from "three";
 export default function Background() {
     const material = useRef()
     const color = useRef({
-        color: "#b9bcff",
+        color: "#395C6B",
       });
       const data = useScroll();
       const tl = useRef();
@@ -27,7 +27,7 @@ export default function Background() {
           color: "#7a7ca5",
         });
         tl.current.to(color.current, {
-          color: "#9b96dd",
+          color: "#395C6B",
         });
       }, []);
 

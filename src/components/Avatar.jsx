@@ -17,7 +17,7 @@ export function Avatar(props) {
     wireframe: false
   })
   const group = useRef()
-  const { nodes, materials } = useGLTF('/models/64ece95e4a8548d9bc0ff8cf.glb');
+  const { nodes, materials } = useGLTF('models/64ece95e4a8548d9bc0ff8cf.glb');
 
   // destructuring: useFBX is returning and object with a property called animations.  We are then extracting the property and renaming it to a new variable name 'typingAnimation'
   const { animations: typingAnimation } = useFBX('animations/Typing.fbx');
@@ -73,4 +73,4 @@ export function Avatar(props) {
   )
 }
 
-useGLTF.preload('/models/64ece95e4a8548d9bc0ff8cf.glb')
+useGLTF.preload('models/64ece95e4a8548d9bc0ff8cf.glb')

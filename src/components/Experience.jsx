@@ -158,7 +158,7 @@ export default function Experience(props) {
               transparent
               distort={1}
               speed={5}
-              color="yellow"
+              color="purple"
             />
           </mesh>
         </Float>
