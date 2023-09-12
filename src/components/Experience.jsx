@@ -6,14 +6,17 @@ import {
 import { useFrame, useThree } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { framerMotionConfig } from "../config";
 import  Avatar  from "./Avatar";
 import  Office     from "./Office";
+import * as THREE from "three";
 
 export default function Experience (props) {
   const { section, menuOpened } = props;
   const { viewport } = useThree();
+
+  console.log(menuOpened)
 
   const cameraPositionX = useMotionValue();
   const cameraLookAtX = useMotionValue();
@@ -27,13 +30,29 @@ export default function Experience (props) {
     });
   }, [menuOpened]);
 
+  const characterContainerAboutRef = useRef();
+
   useFrame((state) => {
     state.camera.position.x = cameraPositionX.get();
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
+    // const position = new THREE.Vector3()
+    // characterContainerAboutRef.current.getWorldPosition(position)
+    // console.log([position.x, position.y, position.z])
+    
+    // const quaternion = new THREE.Quaternion();
+    // characterContainerAboutRef.current.getWorldQuaternion(quaternion);
+    // const euler = new THREE.Euler();
+    // euler.setFromQuaternion(quaternion, "XYZ")
+    // console.log([euler.x, euler.y, euler.z])
   });
+  console.log(section)
 
   return (
     <>
+    <group position={[1.9072935059634513, -0.10683884693718124, 2.681801948466054]}
+    rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]} >
+    <Avatar animation={section === 0 ? "Typing" : "Standing"} />
+    </group>
       <ambientLight intensity={1} />
       <motion.group
         position={[1.5, 2, 3]}
@@ -44,6 +63,11 @@ export default function Experience (props) {
         }}
       >
         <Office section={section} />
+        <group name="CharacterSpot" position={[0.07, 0.24, -0.57]} rotation={[-Math.PI, 0.42, -Math.PI]} ref={characterContainerAboutRef} >
+
+
+   
+        </group>
       </motion.group>
 
       {/* SKILLS */}
@@ -91,9 +115,7 @@ export default function Experience (props) {
             />
           </mesh>
         </Float>
-        <group scale={[2, 2, 2]} position-y={-1.5}>
-          <Avatar animation={section === 0 ? "Falling" : "Standing"} />
-        </group>
+
       </motion.group>
     </>
   );
