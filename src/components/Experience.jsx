@@ -1,22 +1,26 @@
+
 import {
   Float,
   MeshDistortMaterial,
   MeshWobbleMaterial,
 } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
+import { useScroll } from "@react-three/drei";
 import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { framerMotionConfig } from "../config";
-import  Avatar  from "./Avatar";
-import  Office     from "./Office";
+import { Avatar } from "./Avatar";
+import Office from "./Office";
+import Projects from "./Projects"
 import * as THREE from "three";
 
-export default function Experience (props) {
-  const { section, menuOpened } = props;
+export default function Experience(props) {
+  const { menuOpened } = props;
   const { viewport } = useThree();
+  const data = useScroll();
 
-  console.log(menuOpened)
+  const [section, setSection] = useState(0);
 
   const cameraPositionX = useMotionValue();
   const cameraLookAtX = useMotionValue();
@@ -31,14 +35,32 @@ export default function Experience (props) {
   }, [menuOpened]);
 
   const characterContainerAboutRef = useRef();
+  const [characterAnimation, setCharacterAnimtion] = useState("Typing");
+
+  useEffect(() => {
+    setCharacterAnimtion("Falling");
+    setTimeout(() => {
+      setCharacterAnimtion(section === 0 ? "Typing" : "Standing")
+    }, 600)
+  }, [section])
 
   useFrame((state) => {
+    let currentSection = Math.floor(data.scroll.current * data.pages);
+
+    if (currentSection > 3) {
+      currentSection = 3;
+    }
+
+    if (currentSection !== section) {
+      setSection(currentSection)
+    }
+
     state.camera.position.x = cameraPositionX.get();
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
     // const position = new THREE.Vector3()
     // characterContainerAboutRef.current.getWorldPosition(position)
     // console.log([position.x, position.y, position.z])
-    
+
     // const quaternion = new THREE.Quaternion();
     // characterContainerAboutRef.current.getWorldQuaternion(quaternion);
     // const euler = new THREE.Euler();
@@ -47,12 +69,49 @@ export default function Experience (props) {
   });
   console.log(section)
 
+
   return (
     <>
-    <group position={[1.9072935059634513, -0.10683884693718124, 2.681801948466054]}
-    rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]} >
-    <Avatar animation={section === 0 ? "Typing" : "Standing"} />
-    </group>
+      <motion.group position={[1.9072935059634513, 0.216, 2.681801948466054]}
+        rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
+        animate={"" + section}
+        transition={{
+          duration: 0.6,
+        }}
+        variants={{
+          0: {
+            scaleX: 0.95,
+            scaleY: 0.95,
+            scaleZ: 0.95,
+          },
+          1: {
+            y: -viewport.height + 0.5,
+            x: 0,
+            z: 7,
+            rotateX: 0,
+            rotateY: 0,
+            rotateZ: 0,
+          },
+          2: {
+            x: -2,
+            y: -viewport.height * 2 + 0.5,
+            z: 0,
+            rotateX: 0,
+            rotateY: Math.PI / 2,
+            rotateZ: 0,
+          },
+          3: {
+            y: -viewport.height * 3 + 1,
+            x: 0.3,
+            z: 8.5,
+            rotateX: 0,
+            rotateY: -Math.PI / 4,
+            rotateZ: 0,
+          },
+        }}
+      >
+        <Avatar animation={characterAnimation} />
+      </motion.group>
       <ambientLight intensity={1} />
       <motion.group
         position={[1.5, 2, 3]}
@@ -66,7 +125,7 @@ export default function Experience (props) {
         <group name="CharacterSpot" position={[0.07, 0.24, -0.57]} rotation={[-Math.PI, 0.42, -Math.PI]} ref={characterContainerAboutRef} >
 
 
-   
+
         </group>
       </motion.group>
 
@@ -115,8 +174,8 @@ export default function Experience (props) {
             />
           </mesh>
         </Float>
-
       </motion.group>
+      <Projects />
     </>
   );
 };
