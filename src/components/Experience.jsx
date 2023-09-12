@@ -68,8 +68,6 @@ export default function Experience(props) {
     // euler.setFromQuaternion(quaternion, "XYZ")
     // console.log([euler.x, euler.y, euler.z])
   });
-  console.log(section)
-
 
   return (
     <>

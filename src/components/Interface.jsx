@@ -64,7 +64,8 @@ function Section(props) {
     )
 }
 
-function AboutSection() {
+function AboutSection(props) {
+    const {setSection} = props;
     return (
         <Section>
             <h1 className="text-6xl font-extrabold leading-snug">
@@ -88,7 +89,7 @@ function AboutSection() {
                     <br />
                     ...I make web applications!
                 </motion.p>
-                <motion.button className="bg-cyan-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16"
+                <motion.button onClick={() => setSection(3)} className="bg-cyan-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16"
                     initial={{
                         opacity: 0,
                         y: 25,
@@ -285,10 +286,11 @@ function ProjectsSection() {
     );
 };
 
-export default function Interface() {
+export default function Interface(props) {
+    const {setSection} = props;
     return (
         <div className='flex flex-col items-center w-screen'>
-            <AboutSection />
+            <AboutSection setSection={setSection}/>
             <SkillSection />
             <ProjectsSection />
             <ContactSection />
