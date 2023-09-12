@@ -1,25 +1,28 @@
 import { motion } from "framer-motion";
 
+import { useAtom } from "jotai";
+import { currentProjectAtom, projects } from "./Projects";
+
 const skills = [
     {
         title: "HTML5",
-        level: 100
+        level: 95
     },
     {
         title: "CSS3",
-        level: 100
+        level: 94
     },
     {
         title: "JavaScript",
-        level: 100
+        level: 95
     },
     {
         title: "React.js",
-        level: 100
+        level: 80
     },
     {
         title: "Node.js",
-        level: 100
+        level: 95
     },
 ]
 
@@ -30,7 +33,7 @@ const languages = [
     },
     {
         title: "🇵🇭 Tagalog",
-        level: 100
+        level: 85
     },
 
 
@@ -250,14 +253,46 @@ function ContactSection() {
     )
 }
 
+function ProjectsSection() {
+    const [currentProject, setCurrentProject] = useAtom(currentProjectAtom);
+  
+    const nextProject = () => {
+      setCurrentProject((currentProject + 1) % projects.length);
+    };
+  
+    const previousProject = () => {
+      setCurrentProject((currentProject - 1 + projects.length) % projects.length);
+    };
+  
+    return (
+      <Section>
+        <div className="flex w-full h-full gap-8 items-center justify-center">
+          <button
+            className="hover:text-cyan-900 transition-colors"
+            onClick={previousProject}
+          >
+            ← Previous
+          </button>
+          <h2 className="text-5xl font-bold">Projects</h2>
+          <button
+            className="hover:text-cyan-900 transition-colors"
+            onClick={nextProject}
+          >
+            Next →
+          </button>
+        </div>
+      </Section>
+    );
+  };
+
 export default function Interface() {
     return (
         <div className='flex flex-col items-center w-screen'>
             <AboutSection />
             <SkillSection />
-            <Section>
-                <h1>Projects</h1>
-            </Section>
+
+                <ProjectsSection />
+
             <ContactSection />
         </div>
     )
