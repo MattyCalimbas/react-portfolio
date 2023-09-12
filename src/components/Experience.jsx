@@ -1,7 +1,7 @@
 import { OrbitControls, Sky, Environment, ContactShadows } from "@react-three/drei";
 import Avatar from './Avatar';
 import { useControls } from "leva";
-import Office from './Office'
+import Office  from './Office'
 import { motion } from 'framer-motion-3d'
 
 
