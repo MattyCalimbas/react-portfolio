@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "start": "serve dist -s -n -L -p $PORT"
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
@@ -21,6 +22,7 @@
     "leva": "^0.9.34",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "serve": "^14.2.1",
     "three": "^0.146.0"
   },
   "devDependencies": {
