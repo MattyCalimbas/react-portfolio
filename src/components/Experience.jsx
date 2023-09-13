@@ -19,6 +19,8 @@ import Background from "./Background";
 export default function Experience(props) {
   const { menuOpened } = props;
   const { viewport } = useThree();
+  console.log(viewport.width, viewport.height)
+
   const data = useScroll();
 
   const [section, setSection] = useState(0);
@@ -110,7 +112,7 @@ export default function Experience(props) {
           },
         }}
       >
-        <Avatar animation={characterAnimation} />
+        <Avatar animation={characterAnimation} wireframe={section === 1}/>
       </motion.group>
       <ambientLight intensity={1} />
       <motion.group

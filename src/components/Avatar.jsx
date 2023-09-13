@@ -10,11 +10,10 @@ import { useControls } from 'leva';
 import { useFBX, useGLTF, useAnimations } from '@react-three/drei';
 
 export function Avatar(props) {
-  const { animation } = props;
-  const { headFollow, cursorFollow, wireframe } = useControls({
+  const { animation, wireframe } = props;
+  const { headFollow, cursorFollow} = useControls({
     headFollow: false,
     cursorFollow:false,
-    wireframe: false
   })
   const group = useRef()
   const { nodes, materials } = useGLTF('models/64ece95e4a8548d9bc0ff8cf.glb');
