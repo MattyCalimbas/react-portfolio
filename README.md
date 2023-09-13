@@ -78,7 +78,3 @@ Contributions are welcome! If you find bugs or want to improve the project, feel
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Designed and developed with ❤️ by [Matthew Calimbas](https://www.mattcalimbas.com)
