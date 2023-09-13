@@ -14,26 +14,30 @@ const skills = [
     },
     {
         title: "JavaScript",
-        level: 95
+        level: 90
     },
     {
         title: "React.js",
-        level: 80
+        level: 85
     },
     {
         title: "Node.js",
-        level: 95
+        level: 90
     },
 ]
 
-const languages = [
+const tools = [
     {
-        title: "🇺🇸 English",
+        title: "VSCode",
         level: 100
     },
     {
-        title: "🇵🇭 Tagalog",
+        title: "Figma",
         level: 85
+    },
+    {
+        title: "Photoshop",
+        level: 80
     },
 
 
@@ -85,11 +89,11 @@ function AboutSection(props) {
                         duration: 1,
                         delay: 1.5
                     }}>
-                    Web Developer
+                    <span className="md:text-2xl">WEB DEVELOPER</span>
                     <br />
                     ...I make web applications!
                 </motion.p>
-                <motion.button onClick={() => setSection(3)} className="bg-purple-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-4 md:mt-16"
+                <motion.button onClick={() => setSection(3)} className="bg-cyan-950 text-white py-4 px-8 rounded-lg font-bold text-lg mt-4 md:mt-16"
                     initial={{
                         opacity: 0,
                         y: 25,
@@ -137,7 +141,7 @@ function SkillSection() {
                             </motion.h3>
                             <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                                 <motion.div
-                                    className="h-full bg-blue-700 rounded-full "
+                                    className="h-full bg-cyan-900 rounded-full "
                                     style={{ width: `${skill.level}%` }}
                                     initial={{
                                         scaleX: 0,
@@ -158,9 +162,9 @@ function SkillSection() {
                     ))}
                 </div>
                 <div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mt-10">Languages</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mt-10">Tools</h2>
                     <div className=" mt-8 space-y-4">
-                        {languages.map((lng, index) => (
+                        {tools.map((tool, index) => (
                             <div className="w-full md:w-64" key={index}>
                                 <motion.h3
                                     className="text-lg md:text-xl font-bold text-gray-100"
@@ -177,12 +181,12 @@ function SkillSection() {
                                         },
                                     }}
                                 >
-                                    {lng.title}
+                                    {tool.title}
                                 </motion.h3>
                                 <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                                     <motion.div
-                                        className="h-full bg-blue-700 rounded-full "
-                                        style={{ width: `${lng.level}%` }}
+                                        className="h-full bg-cyan-900 rounded-full "
+                                        style={{ width: `${tool.level}%` }}
                                         initial={{
                                             scaleX: 0,
                                             originX: 0,

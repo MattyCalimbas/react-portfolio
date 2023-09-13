@@ -6,7 +6,7 @@ import {
 } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useScroll } from "@react-three/drei";
-import { animate, useMotionValue } from "framer-motion";
+import { animate, useMotionValue, useResetProjection } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import { useEffect, useRef, useState } from "react";
 import { framerMotionConfig } from "../config";
@@ -19,9 +19,12 @@ import Background from "./Background";
 export default function Experience(props) {
   const { menuOpened } = props;
   const { viewport } = useThree();
-  console.log(viewport.width, viewport.height)
 
   const data = useScroll();
+
+  const isMobile = window.innerWidth < 768;
+  const responsiveRatio = viewport.width / 12;
+  const officeScaleRatio = Math.max(0.5, Math.min(0.9 * responsiveRatio, 0.9));
 
   const [section, setSection] = useState(0);
 
@@ -47,6 +50,8 @@ export default function Experience(props) {
     }, 600)
   }, [section])
 
+  const characterGroup = useRef()
+
   useFrame((state) => {
     let currentSection = Math.floor(data.scroll.current * data.pages);
 
@@ -61,7 +66,10 @@ export default function Experience(props) {
     state.camera.position.x = cameraPositionX.get();
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
     // const position = new THREE.Vector3()
-    // characterContainerAboutRef.current.getWorldPosition(position)
+    if (section === 0) {
+
+      characterContainerAboutRef.current.getWorldPosition(characterGroup.current.position);
+    }
     // console.log([position.x, position.y, position.z])
 
     // const quaternion = new THREE.Quaternion();
@@ -73,8 +81,10 @@ export default function Experience(props) {
 
   return (
     <>
-    <Background />
-      <motion.group position={[1.9072935059634513, 0.216, 2.681801948466054]}
+      <Background />
+      <motion.group
+        ref={characterGroup}
+        scale={[officeScaleRatio, officeScaleRatio, officeScaleRatio]}
         rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
         animate={"" + section}
         transition={{
@@ -82,45 +92,54 @@ export default function Experience(props) {
         }}
         variants={{
           0: {
-            scaleX: 0.95,
-            scaleY: 0.95,
-            scaleZ: 0.95,
+            scaleX: officeScaleRatio,
+            scaleY: officeScaleRatio,
+            scaleZ: officeScaleRatio,
           },
           1: {
             y: -viewport.height + 0.5,
-            x: 0,
+            x: isMobile ? 0.3 : 0,
             z: 7,
             rotateX: 0,
-            rotateY: 0,
+            rotateY: isMobile ? -Math.PI / 2 : 0,
             rotateZ: 0,
+            scaleX: isMobile ? 1.5 : 1,
+            scaleY: isMobile ? 1.5 : 1,
+            scaleZ: isMobile ? 1.5 : 1
           },
           2: {
-            x: -2,
+            x: isMobile ? -1.4: -2,
             y: -viewport.height * 2 + 0.5,
             z: 0,
             rotateX: 0,
             rotateY: Math.PI / 2,
             rotateZ: 0,
+            scaleX: 1,
+            scaleY: 1,
+            scaleZ: 1
           },
           3: {
             y: -viewport.height * 3 + 1,
-            x: 0.3,
+            x: 0.24,
             z: 8.5,
             rotateX: 0,
             rotateY: -Math.PI / 4,
             rotateZ: 0,
+            scaleX: 1,
+            scaleY: 1,
+            scaleZ: 1
           },
         }}
       >
-        <Avatar animation={characterAnimation} wireframe={section === 1}/>
+        <Avatar animation={characterAnimation} wireframe={section === 1} />
       </motion.group>
       <ambientLight intensity={1} />
       <motion.group
-        position={[1.5, 2, 3]}
-        scale={[0.9, 0.9, 0.9]}
+        position={[isMobile ? 0 : 1.5 * officeScaleRatio, isMobile ? -viewport.height / 6 : 2, 3]}
+        scale={[officeScaleRatio, officeScaleRatio, officeScaleRatio]}
         rotation-y={-Math.PI / 4}
         animate={{
-          y: section === 0 ? 0 : -1,
+          y: isMobile ? -viewport.height / 6 : 0,
         }}
       >
         <Office section={section} />
@@ -133,10 +152,10 @@ export default function Experience(props) {
 
       {/* SKILLS */}
       <motion.group
-        position={[0, -1.5, -10]}
+        position={[0, isMobile ? -viewport.height : -1.5 * officeScaleRatio, -10]}
         animate={{
           z: section === 1 ? 0 : -10,
-          y: section === 1 ? -viewport.height : -1.5,
+          y: section === 1 ? -viewport.height : (isMobile ? -viewport.height : -1.5 * officeScaleRatio),
         }}
       >
         <directionalLight position={[-5, 3, 5]} intensity={0.4} />
@@ -160,7 +179,7 @@ export default function Experience(props) {
               transparent
               distort={1}
               speed={5}
-              color="purple"
+              color={"#395C6B"}
             />
           </mesh>
         </Float>

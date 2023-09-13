@@ -13,7 +13,7 @@ export default function Menu(props) {
 
     return (
         <>
-            <button onClick={() => setMenuOpened(!menuOpened)} className="z-20 fixed top-4 right-4 md:top-12 md:right-12 p-3 bg-purple-900 w-11 h-11 rounded-md" >
+            <button onClick={() => setMenuOpened(!menuOpened)} className="z-20 fixed top-4 right-4 md:top-12 md:right-12 p-3 bg-cyan-950 w-11 h-11 rounded-md" >
                 <div className={`bg-white h-0.5 rounded-md w-full transition-all ${menuOpened ? "rotate-45  translate-y-0.5" : ""}`} />
                 <div className={`bg-white h-0.5 rounded-md w-full my-1 ${menuOpened ? "hidden" : ""}`} />
                 <div className={`bg-white h-0.5 rounded-md w-full transition-all ${menuOpened ? "-rotate-45" : ""}`} />
