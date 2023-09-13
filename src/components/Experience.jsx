@@ -141,6 +141,7 @@ export default function Experience(props) {
         animate={{
           y: isMobile ? -viewport.height / 6 : 0,
         }}
+        transition={{duration: 0.8}}
       >
         <Office section={section} />
         <group name="CharacterSpot" position={[0.07, 0.24, -0.57]} rotation={[-Math.PI, 0.42, -Math.PI]} ref={characterContainerAboutRef} >
