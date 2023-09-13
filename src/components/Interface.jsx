@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 
 import { useAtom } from "jotai";
 import { currentProjectAtom, projects } from "./Projects";
+import { useForm, ValidationError } from '@formspree/react';
+
 
 const skills = [
     {
@@ -44,7 +46,7 @@ const tools = [
 ]
 
 function Section(props) {
-    const { children, mobileTop} = props;
+    const { children, mobileTop } = props;
 
     return (
         <motion.section
@@ -69,7 +71,7 @@ function Section(props) {
 }
 
 function AboutSection(props) {
-    const {setSection} = props;
+    const { setSection } = props;
     return (
         <Section mobileTop>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-snug mt-8 md:mt-0">
@@ -212,11 +214,16 @@ function SkillSection() {
 }
 
 function ContactSection() {
+    const [state, handleSubmit] = useForm("mzblvdvw");
     return (
         <Section>
             <h2 className="text-3xl md:text-5xl font-bold">Contact me</h2>
             <div className="mt-8 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
-                <form>
+
+                {state.succeeded ? (
+                    <p className="text-gray-900 text-center">Thanks for your message</p>
+                ) : (
+                <form onSubmit={handleSubmit}>
                     <label for="name" className="font-medium text-gray-900 block mb-1">
                         Name
                     </label>
@@ -232,6 +239,7 @@ function ContactSection() {
                     >
                         Email
                     </label>
+                    <ValidationError className="mt-1 text-red-500" errors={state.errors} />
                     <input
                         type="email"
                         name="email"
@@ -249,10 +257,13 @@ function ContactSection() {
                         id="message"
                         className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-900 p-3"
                     />
-                    <button className="bg-cyan-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
+                    <ValidationError className="mt-1 text-red-500" errors={state.errors} />
+                    <button disabled={state.submitting} className="bg-cyan-900 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
                         Submit
                     </button>
                 </form>
+                )}
+
             </div>
         </Section>
     )
@@ -291,10 +302,10 @@ function ProjectsSection() {
 };
 
 export default function Interface(props) {
-    const {setSection} = props;
+    const { setSection } = props;
     return (
         <div className='flex flex-col items-center w-screen'>
-            <AboutSection setSection={setSection}/>
+            <AboutSection setSection={setSection} />
             <SkillSection />
             <ProjectsSection />
             <ContactSection />
